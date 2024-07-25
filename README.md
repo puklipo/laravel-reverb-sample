@@ -39,10 +39,10 @@ php artisan reverb:start
 
 準備はここまでだけどReverbはインストールしただけで使えるスターターキットではないのでこのままでは何も使えない。
 
-Reverbが提供するのはWebSocketサーバー機能。
-サーバーサイド：LaravelからメッセージなどをWebSocketサーバーに送信。
-クライアントサイド：Laravel Echoなどを使ってWebSocketサーバーから受信。
-Reverbは中間だけなので前後の部分は自分で作らなければならない。
+Reverbが提供するのはWebSocketサーバー機能。  
+サーバーサイド：LaravelからメッセージなどをWebSocketサーバーに送信。  
+クライアントサイド：Laravel Echoなどを使ってWebSocketサーバーから受信。  
+Reverbは中間だけなので前後の部分は自分で作らなければならない。  
 何を送信して、受信したものをどう表示するかはプロジェクトごとに違うので当たり前の話。
 
 ## サーバーサイドから送信
