@@ -27,7 +27,8 @@ Breeze、Livewire(Volt Functional)、PHPUnit、SQLiteなどを選択。
 cd laravel-reverb-sample
 php artisan install:broadcasting
 ```
-Reverbインストールを選択。
+Reverbインストールを選択。  
+インストール時に`.env`などが書き換えられる。このサンプルには`.env`が含まれてなくてgit cloneしても動かないはず。
 
 ターミナルの別タブなどでLaravelとReverbを同時に起動したままにする。
 ```bash
