@@ -249,7 +249,7 @@ MessageCreated::dispatch()
 Laravelのイベント機能が一番最初。イベントをWebSocketで送信するのがブロードキャスト機能。Reverb登場前はPusherやサードパーティのWebSocketサーバーを使うしかなかった。ReverbはLaravel公式のWebSocketサーバー。
 
 ## 運用
-Laravel公式なのでForgeでもしっかりサポートされているので本番サーバーでの運用はForge使うのが一番簡単。
+Laravel公式なのでForgeでもしっかりサポートされている。本番サーバーでの運用はForge使うのが一番簡単。
 Forgeを使わないならドキュメントを読んで自力でどうにかするしかない。
 
 Reverb発表時はVaporにも対応するみたいなこと言ってたけど現時点では対応してない。
