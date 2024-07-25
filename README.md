@@ -4,9 +4,9 @@
 
 ## バージョン
 - Laravel 11.x
-- Laravel Reverb 1.x
+- Laravel Reverb 1.0
 - Breeze 2.x Livewire (Volt Functional API) with Alpine
-- Livewire 3.x
+- Livewire 3.x Volt 1.x
 - Laravel Installer 5.8
 
 Laravelはバージョンが変わったら古い情報が役に立たなくなるので必ずバージョンを確認する。
@@ -134,7 +134,7 @@ class ReverbTest extends Command
     public function handle(): int
     {
         MessageCreated::dispatch(User::findOrFail(1), 'test');
-        
+
         //もしくは
         //MessageCreated::broadcast(User::findOrFail(1), 'test');
 
@@ -237,3 +237,18 @@ php artisan reverb:test
 コンソールで`http://127.0.0.1:8000/broadcasting/auth 403 (Forbidden)`のエラーが出てる場合、`routes/channels.php`の設定ができてない。
 
 メッセージを送信しても更新されない場合、ネットワークの`Fetch/XHR`や`WS`を見る。
+
+## 実践
+artisanコマンドで送信する以外の使い方、と言っても送信したい場所でイベントのdispatch()を呼び出すだけなのでどこでも使える。
+
+```php
+MessageCreated::dispatch()
+```
+
+Laravelのイベント機能が一番最初。イベントをWebSocketで送信するのがブロードキャスト機能。Reverb登場前はPusherやサードパーティのWebSocketサーバーを使うしかなかった。ReverbはLaravel公式のWebSocketサーバー。
+
+## 運用
+Laravel公式なのでForgeでもしっかりサポートされているので本番サーバーでの運用はForge使うのが一番簡単。
+Forgeを使わないならドキュメントを読んで自力でどうにかするしかない。
+
+Reverb発表時はVaporにも対応するみたいなこと言ってたけど現時点では対応してない。
